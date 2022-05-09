@@ -9,7 +9,7 @@ pipeline {
     stage('docker build and push') {
       steps {
         sh '''
-	gcloud builds submit --config cloudbuild.yaml
+	sudo gcloud builds submit --config cloudbuild.yaml
         '''
       }
     }
