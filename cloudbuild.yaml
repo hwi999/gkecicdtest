@@ -4,4 +4,3 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-f', 'Dockerfilegreen', '-t', 'gcr.io/jhj-02/blogimage:green', '.']
 images: ['gcr.io/jhj-02/mainimage:blue', 'gcr.io/jhj-02/blogimage:green']
-
