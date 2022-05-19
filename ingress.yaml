@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: page-ingress
+spec:
+  rules:
+  - host: jhj.studycloud.site
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-main
+            port:
+              number: 80
+      - path: /blog
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-blog
+            port:
+              number: 80

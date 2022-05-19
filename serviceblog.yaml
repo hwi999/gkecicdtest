@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-blog
+spec:
+  selector:
+    page: blog
+  ports:
+  - port: 80
+

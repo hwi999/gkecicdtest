@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      page: blog
+  template:
+    metadata:
+      name: pod-blog
+      labels:
+        page: blog
+    spec:
+      containers:
+      - name: ctn-blog
+        image: gcr.io/jhj-02/blogimage:green
+        ports:
+        - containerPort: 80
+

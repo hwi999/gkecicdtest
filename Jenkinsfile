@@ -13,6 +13,18 @@ pipeline {
         '''
       }
     }
+    stage('deploy') {
+      steps {
+        sh '''
+        sudo kubectl apply -f deploymain.yaml
+	sudo kubectl apply -f servicemain.yaml
+        sudo kubectl apply -f deployblog.yaml
+	sudo kubectl apply -f serviceblog.yaml
+	sudo kubectl apply -f ingress.yaml
+        '''
+      }
+    }
+
   }
 }
 
