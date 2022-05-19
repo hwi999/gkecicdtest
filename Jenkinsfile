@@ -6,7 +6,7 @@ pipeline {
 	sudo kubectl get ingress 
         '''
       }
-    }
+   }
 
-  }
+}
 
