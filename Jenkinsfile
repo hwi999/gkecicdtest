@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  stages {
     stage('docker build and push') {
       steps {
         sh '''
@@ -7,6 +8,6 @@ pipeline {
         '''
       }
    }
-
+  }
 }
 
