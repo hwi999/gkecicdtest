@@ -7,5 +7,3 @@ spec:
     page: main
   ports:
   - port: 80
-~
-
