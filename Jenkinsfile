@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage('git scm update') {
       steps {
-        git branch: 'master',
-            credentialsId: 'github_access_token',
-            url: 'https://github.com/hwi999/gkecicdtest.git'
+        git url: 'https://github.com/hwi999/gkecicdtest.git', branch: 'master'
       }
     }
     stage('docker build and push') {
@@ -15,13 +13,6 @@ pipeline {
         '''
       }
     }
-    stage('deploy k8s') {
-      steps {
-        sh '''
-	sudo kubectl set image deployment webserver-blue webserver-container=gcr.io/jhj-02/mainimage:blue
-	sudo kubectl set image deployment nginx ctn-nginx=gcr.io/jhj-02/blogimage:green
-        '''
-      }
-    }
   }
 }
+
