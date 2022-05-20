@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ctn-main
-        image: gcr.io/jhj-02/mainimage:blue
+        image: gcr.io/jhj-02/mainimage:blue2
         ports:
         - containerPort: 80
 

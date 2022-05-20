@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ctn-blog
-        image: gcr.io/jhj-02/blogimage:green
+        image: gcr.io/jhj-02/blogimage:green2
         ports:
         - containerPort: 80
 

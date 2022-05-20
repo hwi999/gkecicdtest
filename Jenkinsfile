@@ -11,11 +11,11 @@ pipeline {
     stage('deploy') {
       steps {
         sh '''
-        sudo kubectl apply -f deploymain.yaml
-	sudo kubectl apply -f servicemain.yaml
-        sudo kubectl apply -f deployblog.yaml
-	sudo kubectl apply -f serviceblog.yaml
-	sudo kubectl apply -f ingress.yaml
+        sudo kubectl set image deployment main ctn-main=gcr.io/jhj-02/mainimage:blue2
+	sudo kubectl set image deployment main ctn-main=gcr.io/jhj-02
+/blogimage:green2
+        sudo kubectl describe deploy main | grep Image
+        sudo kubectl describe deploy blog | grep Image
         '''
       }
     }

@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-f', 'Dockerfileblue', '-t', 'gcr.io/jhj-02/mainimage:blue', '.']
+    args: ['build', '-f', 'Dockerfileblue', '-t', 'gcr.io/jhj-02/mainimage:blue2', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-f', 'Dockerfilegreen', '-t', 'gcr.io/jhj-02/blogimage:green', '.']
-images: ['gcr.io/jhj-02/mainimage:blue', 'gcr.io/jhj-02/blogimage:green']
+    args: ['build', '-f', 'Dockerfilegreen', '-t', 'gcr.io/jhj-02/blogimage:green2', '.']
+images: ['gcr.io/jhj-02/mainimage:blue2', 'gcr.io/jhj-02/blogimage:green2']
