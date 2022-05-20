@@ -12,7 +12,7 @@ pipeline {
       steps {
         sh '''
         sudo kubectl set image deployment main ctn-main=gcr.io/jhj-02/mainimage:blue2
-	sudo kubectl set image deployment main ctn-main=gcr.io/jhj-02/blogimage:green2
+	sudo kubectl set image deployment blog ctn-blog=gcr.io/jhj-02/blogimage:green2
         sudo kubectl describe deploy main | grep Image
         sudo kubectl describe deploy blog | grep Image
         '''
