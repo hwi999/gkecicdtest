@@ -4,10 +4,22 @@ pipeline {
     stage('docker build and push') {
       steps {
         sh '''
-	sudo kubectl get ingress 
+	sudo gcloud builds submit --config cloudbuild.yaml
         '''
       }
-   }
+    }
+    stage('deploy') {
+      steps {
+        sh '''
+        sudo kubectl apply -f deploymain.yaml
+	sudo kubectl apply -f servicemain.yaml
+        sudo kubectl apply -f deployblog.yaml
+	sudo kubectl apply -f serviceblog.yaml
+	sudo kubectl apply -f ingress.yaml
+        '''
+      }
+    }
+
   }
 }
 
